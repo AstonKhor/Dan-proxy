@@ -14,7 +14,7 @@ app.listen(port, () => {
   console.log(`Proxy listening on port ${port}`);
 });
 
-app.get('/', (req,res) => {
+app.get('/restaurants', (req,res) => {
   fetch('http://52.72.117.110:3003/restaurantReviews/Saigon', {
     method: 'GET'
   })
