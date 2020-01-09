@@ -13,3 +13,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.listen(port, () => {
   console.log(`Proxy listening on port ${port}`);
 });
+
+app.get('/', (req,res) => {
+  fetch('http://52.72.117.110:3003/restaurantReviews/Saigon', {
+    method: 'GET'
+  })
+  .then(() => {
+    res.end();
+  })
+})
