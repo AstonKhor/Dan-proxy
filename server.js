@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const path = require("path");
 const port = 3000;
+const fetch = require("node-fetch");
 
 app.use(cors());
 app.use(express.static(path.join(__dirname, "/public")));
@@ -20,5 +21,8 @@ app.get('/restaurants', (req,res) => {
   })
   .then(() => {
     res.end();
+  })
+  .catch(() => {
+    throw err;
   })
 })
