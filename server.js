@@ -19,8 +19,9 @@ app.get('/restaurants', (req,res) => {
   fetch('http://52.72.117.110:3003/restaurantReviews/Saigon', {
     method: 'GET'
   })
-  .then(() => {
-    console.log('success');
+  .then((resp) => resp.json())
+  .then((data) => {
+    console.log('success', data);
     res.end();
   })
   .catch(() => {
