@@ -21,8 +21,7 @@ app.get('/restaurants', (req,res) => {
   })
   .then((resp) => resp.json())
   .then((data) => {
-    console.log('success', data);
-    res.end();
+    res.status(200).send(data);
   })
   .catch(() => {
     throw err;
