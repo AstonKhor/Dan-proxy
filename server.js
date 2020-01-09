@@ -20,6 +20,7 @@ app.get('/restaurants', (req,res) => {
     method: 'GET'
   })
   .then(() => {
+    console.log('success');
     res.end();
   })
   .catch(() => {
